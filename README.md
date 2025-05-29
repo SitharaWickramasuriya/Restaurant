@@ -8,7 +8,9 @@
 - About Us section to introduce the restaurant.
 - Contact form for customer inquiries
  ## 🔧 Technologies Used 
-- **HTML5** - Structure of the website - **CSS3** - Styling and layout design - **JavaScript** - Adding interactivity 
+- **HTML5** - Structure of the website
+- **CSS3** - Styling and layout design
+- **JavaScript** - Adding interactivity 
 ## 📔 Usage 
 - Navigate through the homepage to explore different sections.
 - Check out the menu to view available dishes.
