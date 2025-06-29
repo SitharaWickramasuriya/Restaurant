@@ -820,7 +820,7 @@
                 <div class="icon-wrapper">
                   <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                  <select name="person" class="input-field">
+                  <select name="time" class="input-field">
                     <option value="08:00am">08 : 00 am</option>
                     <option value="09:00am">09 : 00 am</option>
                     <option value="010:00am">10 : 00 am</option>
@@ -1217,6 +1217,37 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+  document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault(); // prevent form reload
+
+    const data = {
+      name: document.querySelector('input[name="name"]').value,
+      phone: document.querySelector('input[name="phone"]').value,
+      person: document.querySelector('select[name="person"]').value,
+      date: document.querySelector('input[name="reservation-date"]').value,
+      time: document.querySelector('select[name="reservation-time"]').value,
+      message: document.querySelector('textarea[name="message"]').value
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/reserve", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (err) {
+      alert("Reservation failed. Try again.");
+      console.error(err);
+    }
+  });
+</script>
+
 
 </body>
 
